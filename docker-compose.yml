@@ -63,7 +63,7 @@ services:
     ports:
       - 8083:8083
   ui:
-    build: ./ui
+    build: ./builds/IoT-data-simulator/ui
     image: ibagroup/iot-data-simulator-ui:1.1.0
     container_name: iot-ds-ui
     depends_on:
