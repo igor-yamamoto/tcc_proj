@@ -24,7 +24,7 @@ services:
       - 9000:9000
     command: ["server", "/data"]
   rabbitmq:
-    build: ./rabbitmq
+    build: ./builds/IoT-data-simulator/rabbitmq
     image: ibagroup/iot-data-simulator-rabbitmq:0.1
     container_name: iot-ds-rabbitmq
     volumes:
@@ -38,7 +38,7 @@ services:
       - 15672:15672
       - 61613:61613
   services:
-    build: ./services
+    build: ./builds/IoT-data-simulator/services
     image: ibagroup/iot-data-simulator-services:1.1.0
     container_name: iot-ds-services
     depends_on:
@@ -78,7 +78,7 @@ services:
       - 8090:8090
     command: ["npm", "start"]
   data-sender:
-    build: ./data-sender
+    build: ./builds/IoT-data-simulator/data-sender
     image: ibagroup/iot-data-simulator-sender:1.1.0
     container_name: iot-ds-data-sender
     depends_on:
