@@ -106,20 +106,20 @@ services:
     # volumes:
     #   - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
-### Nifi
+## Nifi
 
-  # nifi:
-  #   image: apache/nifi:1.13.2
-  #   container_name: nifi-t
-  #   environment:
-  #     JVM_OPTS: "-Xmx4g -Xms4g -XX:MaxPermSize=4096m"
-  #   ports:
-  #     - 8080:8080
-  #     - 9990:9990
-  #     - 9991:9991
-  #     - 9992:9992
-  #   volumes:
-  #     - nifi-data:/opt/nifi
+  nifi:
+    image: apache/nifi:1.13.2
+    container_name: nifi-t
+    environment:
+      JVM_OPTS: "-Xmx4g -Xms4g -XX:MaxPermSize=4096m"
+    ports:
+      - 8080:8080
+      - 9990:9990
+      - 9991:9991
+      - 9992:9992
+    volumes:
+      - nifi-data:/opt/nifi
      
 volumes:
   mongodb-data:
@@ -127,4 +127,4 @@ volumes:
   minio-config:
   rabbitmq-data:
   ui-data:
-  # nifi-data:
+  nifi-data:
