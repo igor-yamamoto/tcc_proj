@@ -11,6 +11,8 @@ services:
       - MONGO_INITDB_DATABASE=${MONGODB_INIT_DATABASE}
     ports:
       - 27017:27017
+    networks: 
+      - regional_gateway-network
   minio:
     image: minio/minio
     container_name: iot-ds-minio-t
@@ -23,6 +25,8 @@ services:
     ports:
       - 9000:9000
     command: ["server", "/data"]
+    networks: 
+      - regional_gateway-network
   rabbitmq:
     build: ../builds/IoT-data-simulator/rabbitmq
     image: ibagroup/iot-data-simulator-rabbitmq:0.1
@@ -37,6 +41,8 @@ services:
       - 15671:15671
       - 15672:15672
       - 61613:61613
+    networks: 
+      - regional_gateway-network
   services:
     build: ../builds/IoT-data-simulator/services
     image: ibagroup/iot-data-simulator-services:1.1.0
@@ -62,6 +68,8 @@ services:
       - IMPORT_DEMO_SESSION=true 
     ports:
       - 8083:8083
+    networks: 
+      - regional_gateway-network
   ui:
     build: ../builds/IoT-data-simulator/ui
     image: ibagroup/iot-data-simulator-ui:1.1.0
@@ -77,6 +85,9 @@ services:
     ports:
       - 8090:8090
     command: ["npm", "start"]
+    networks: 
+      - regional_gateway-network
+    
   data-sender:
     build: ../builds/IoT-data-simulator/data-sender
     image: ibagroup/iot-data-simulator-sender:1.1.0
@@ -91,6 +102,9 @@ services:
       - DATA_SENDER_DEBUG_MODE=true
     links:
       - mosquitto:mosquitto
+    networks: 
+      - regional_gateway-network
+    
 
 ### MQTT
 
@@ -103,6 +117,8 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
+    networks: 
+      - regional_gateway-network
     # volumes:
     #   - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
@@ -120,6 +136,9 @@ services:
       - 9992:9992
     volumes:
       - nifi-data-gateway:/opt/nifi
+    networks: 
+      - regional_gateway-network
+      # - gatweay_default
      
 volumes:
   mongodb-data:
@@ -128,3 +147,7 @@ volumes:
   rabbitmq-data:
   ui-data:
   nifi-data-gateway:
+
+networks: 
+  regional_gateway-network:
+    external: true
