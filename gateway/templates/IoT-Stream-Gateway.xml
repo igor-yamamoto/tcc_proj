@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.3">
     <description></description>
-    <groupId>e1ed38c7-017b-1000-c5ee-365bd7ae0096</groupId>
-    <name>IoT-Stream-Gateway</name>
+    <groupId>e6f8cce4-017b-1000-9342-7fa37d67cef5</groupId>
+    <name>IoT-Stream-Gateway-2</name>
     <snippet>
         <processGroups>
-            <id>77e89c31-70c7-3b68-0000-000000000000</id>
-            <parentGroupId>ff800985-9b49-3ebe-0000-000000000000</parentGroupId>
+            <id>bb553176-3b0b-3f81-0000-000000000000</id>
+            <parentGroupId>162b6ee0-5281-3357-0000-000000000000</parentGroupId>
             <position>
                 <x>0.0</x>
                 <y>0.0</y>
@@ -14,14 +14,14 @@
             <comments></comments>
             <contents>
                 <connections>
-                    <id>0dcfcf56-8f8d-317c-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>64aa8611-d3d1-3f81-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
                     <backPressureObjectThreshold>10000</backPressureObjectThreshold>
                     <destination>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>62a26697-c48c-3c29-0000-000000000000</id>
-                        <type>FUNNEL</type>
+                        <groupId>bb553176-3b0b-3f81-0000-000000000000</groupId>
+                        <id>eaa2ac17-6a1c-3a8c-0000-000000000000</id>
+                        <type>PROCESSOR</type>
                     </destination>
                     <flowFileExpiration>0 sec</flowFileExpiration>
                     <labelIndex>1</labelIndex>
@@ -32,95 +32,20 @@
                     <name></name>
                     <selectedRelationships>Message</selectedRelationships>
                     <source>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>47c60b5b-c6ad-344a-0000-000000000000</id>
+                        <groupId>bb553176-3b0b-3f81-0000-000000000000</groupId>
+                        <id>5d194f58-5291-3ed6-0000-000000000000</id>
                         <type>PROCESSOR</type>
                     </source>
                     <zIndex>0</zIndex>
                 </connections>
                 <connections>
-                    <id>0f95eebc-42ac-3b69-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>b8f64cba-ab3f-3446-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
                     <backPressureObjectThreshold>10000</backPressureObjectThreshold>
                     <destination>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>8dd27e21-5c35-36d6-0000-000000000000</id>
-                        <type>FUNNEL</type>
-                    </destination>
-                    <flowFileExpiration>0 sec</flowFileExpiration>
-                    <labelIndex>1</labelIndex>
-                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-                    <name></name>
-                    <selectedRelationships>parse.failure</selectedRelationships>
-                    <source>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>47c60b5b-c6ad-344a-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </source>
-                    <zIndex>0</zIndex>
-                </connections>
-                <connections>
-                    <id>4a140c05-6826-3434-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
-                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-                    <destination>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>62a26697-c48c-3c29-0000-000000000000</id>
-                        <type>FUNNEL</type>
-                    </destination>
-                    <flowFileExpiration>0 sec</flowFileExpiration>
-                    <labelIndex>1</labelIndex>
-                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-                    <name></name>
-                    <selectedRelationships>success</selectedRelationships>
-                    <source>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>cf106346-5fa2-390a-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </source>
-                    <zIndex>0</zIndex>
-                </connections>
-                <connections>
-                    <id>b37d871f-d368-31c2-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
-                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-                    <destination>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>0db2bcc9-fe05-3108-0000-000000000000</id>
-                        <type>FUNNEL</type>
-                    </destination>
-                    <flowFileExpiration>0 sec</flowFileExpiration>
-                    <labelIndex>1</labelIndex>
-                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-                    <name></name>
-                    <selectedRelationships>success</selectedRelationships>
-                    <source>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>af6810a4-a40b-3159-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </source>
-                    <zIndex>0</zIndex>
-                </connections>
-                <connections>
-                    <id>fa5fb050-d70f-32e8-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
-                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-                    <destination>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>3846f645-fa48-3315-0000-000000000000</id>
+                        <groupId>bb553176-3b0b-3f81-0000-000000000000</groupId>
+                        <id>8dee4541-b318-3784-0000-000000000000</id>
                         <type>FUNNEL</type>
                     </destination>
                     <flowFileExpiration>0 sec</flowFileExpiration>
@@ -132,21 +57,21 @@
                     <name></name>
                     <selectedRelationships>failure</selectedRelationships>
                     <source>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>af6810a4-a40b-3159-0000-000000000000</id>
+                        <groupId>bb553176-3b0b-3f81-0000-000000000000</groupId>
+                        <id>eaa2ac17-6a1c-3a8c-0000-000000000000</id>
                         <type>PROCESSOR</type>
                     </source>
                     <zIndex>0</zIndex>
                 </connections>
                 <connections>
-                    <id>fc788875-91b9-31af-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>fb85e903-bcb3-3479-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
                     <backPressureObjectThreshold>10000</backPressureObjectThreshold>
                     <destination>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>af6810a4-a40b-3159-0000-000000000000</id>
-                        <type>PROCESSOR</type>
+                        <groupId>bb553176-3b0b-3f81-0000-000000000000</groupId>
+                        <id>de279685-91de-3337-0000-000000000000</id>
+                        <type>FUNNEL</type>
                     </destination>
                     <flowFileExpiration>0 sec</flowFileExpiration>
                     <labelIndex>1</labelIndex>
@@ -155,51 +80,36 @@
                     <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
                     <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
                     <name></name>
+                    <selectedRelationships>success</selectedRelationships>
                     <source>
-                        <groupId>77e89c31-70c7-3b68-0000-000000000000</groupId>
-                        <id>62a26697-c48c-3c29-0000-000000000000</id>
-                        <type>FUNNEL</type>
+                        <groupId>bb553176-3b0b-3f81-0000-000000000000</groupId>
+                        <id>eaa2ac17-6a1c-3a8c-0000-000000000000</id>
+                        <type>PROCESSOR</type>
                     </source>
                     <zIndex>0</zIndex>
                 </connections>
                 <funnels>
-                    <id>0db2bcc9-fe05-3108-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>8dee4541-b318-3784-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <position>
-                        <x>428.5</x>
-                        <y>656.5</y>
+                        <x>912.0</x>
+                        <y>472.0</y>
                     </position>
                 </funnels>
                 <funnels>
-                    <id>3846f645-fa48-3315-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>de279685-91de-3337-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <position>
-                        <x>964.5</x>
-                        <y>501.5</y>
-                    </position>
-                </funnels>
-                <funnels>
-                    <id>62a26697-c48c-3c29-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
-                    <position>
-                        <x>452.0</x>
-                        <y>293.0</y>
-                    </position>
-                </funnels>
-                <funnels>
-                    <id>8dd27e21-5c35-36d6-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
-                    <position>
-                        <x>1216.0</x>
-                        <y>272.0</y>
+                        <x>448.0</x>
+                        <y>632.0</y>
                     </position>
                 </funnels>
                 <labels>
-                    <id>75924b7c-9a44-30c4-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>b69ff7f8-c719-3128-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <position>
-                        <x>640.0</x>
-                        <y>-48.0</y>
+                        <x>408.0</x>
+                        <y>168.0</y>
                     </position>
                     <height>40.0</height>
                     <label>GATEWAY</label>
@@ -209,14 +119,14 @@
                             <value>22px</value>
                         </entry>
                     </style>
-                    <width>112.0</width>
+                    <width>120.0</width>
                 </labels>
                 <processors>
-                    <id>47c60b5b-c6ad-344a-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>5d194f58-5291-3ed6-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <position>
-                        <x>728.0</x>
-                        <y>56.0</y>
+                        <x>296.0</x>
+                        <y>224.0</y>
                     </position>
                     <bundle>
                         <artifact>nifi-mqtt-nar</artifact>
@@ -447,7 +357,7 @@
                         <name>Message</name>
                     </relationships>
                     <relationships>
-                        <autoTerminate>false</autoTerminate>
+                        <autoTerminate>true</autoTerminate>
                         <name>parse.failure</name>
                     </relationships>
                     <state>STOPPED</state>
@@ -455,8 +365,8 @@
                     <type>org.apache.nifi.processors.mqtt.ConsumeMQTT</type>
                 </processors>
                 <processors>
-                    <id>af6810a4-a40b-3159-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
+                    <id>eaa2ac17-6a1c-3a8c-0000-000000000000</id>
+                    <parentGroupId>bb553176-3b0b-3f81-0000-000000000000</parentGroupId>
                     <position>
                         <x>296.0</x>
                         <y>432.0</y>
@@ -708,219 +618,6 @@
                     <style/>
                     <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka_1_0</type>
                 </processors>
-                <processors>
-                    <id>cf106346-5fa2-390a-0000-000000000000</id>
-                    <parentGroupId>77e89c31-70c7-3b68-0000-000000000000</parentGroupId>
-                    <position>
-                        <x>32.0</x>
-                        <y>-40.0</y>
-                    </position>
-                    <bundle>
-                        <artifact>nifi-kafka-1-0-nar</artifact>
-                        <group>org.apache.nifi</group>
-                        <version>1.13.2</version>
-                    </bundle>
-                    <config>
-                        <bulletinLevel>WARN</bulletinLevel>
-                        <comments></comments>
-                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
-                        <descriptors>
-                            <entry>
-<key>bootstrap.servers</key>
-<value>
-    <name>bootstrap.servers</name>
-</value>
-                            </entry>
-                            <entry>
-<key>security.protocol</key>
-<value>
-    <name>security.protocol</name>
-</value>
-                            </entry>
-                            <entry>
-<key>sasl.kerberos.service.name</key>
-<value>
-    <name>sasl.kerberos.service.name</name>
-</value>
-                            </entry>
-                            <entry>
-<key>kerberos-credentials-service</key>
-<value>
-    <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
-    <name>kerberos-credentials-service</name>
-</value>
-                            </entry>
-                            <entry>
-<key>sasl.kerberos.principal</key>
-<value>
-    <name>sasl.kerberos.principal</name>
-</value>
-                            </entry>
-                            <entry>
-<key>sasl.kerberos.keytab</key>
-<value>
-    <name>sasl.kerberos.keytab</name>
-</value>
-                            </entry>
-                            <entry>
-<key>ssl.context.service</key>
-<value>
-    <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
-    <name>ssl.context.service</name>
-</value>
-                            </entry>
-                            <entry>
-<key>topic</key>
-<value>
-    <name>topic</name>
-</value>
-                            </entry>
-                            <entry>
-<key>topic_type</key>
-<value>
-    <name>topic_type</name>
-</value>
-                            </entry>
-                            <entry>
-<key>honor-transactions</key>
-<value>
-    <name>honor-transactions</name>
-</value>
-                            </entry>
-                            <entry>
-<key>group.id</key>
-<value>
-    <name>group.id</name>
-</value>
-                            </entry>
-                            <entry>
-<key>auto.offset.reset</key>
-<value>
-    <name>auto.offset.reset</name>
-</value>
-                            </entry>
-                            <entry>
-<key>key-attribute-encoding</key>
-<value>
-    <name>key-attribute-encoding</name>
-</value>
-                            </entry>
-                            <entry>
-<key>message-demarcator</key>
-<value>
-    <name>message-demarcator</name>
-</value>
-                            </entry>
-                            <entry>
-<key>message-header-encoding</key>
-<value>
-    <name>message-header-encoding</name>
-</value>
-                            </entry>
-                            <entry>
-<key>header-name-regex</key>
-<value>
-    <name>header-name-regex</name>
-</value>
-                            </entry>
-                            <entry>
-<key>max.poll.records</key>
-<value>
-    <name>max.poll.records</name>
-</value>
-                            </entry>
-                            <entry>
-<key>max-uncommit-offset-wait</key>
-<value>
-    <name>max-uncommit-offset-wait</name>
-</value>
-                            </entry>
-                        </descriptors>
-                        <executionNode>ALL</executionNode>
-                        <lossTolerant>false</lossTolerant>
-                        <penaltyDuration>30 sec</penaltyDuration>
-                        <properties>
-                            <entry>
-<key>bootstrap.servers</key>
-<value>${kafka_url}</value>
-                            </entry>
-                            <entry>
-<key>security.protocol</key>
-<value>PLAINTEXT</value>
-                            </entry>
-                            <entry>
-<key>sasl.kerberos.service.name</key>
-                            </entry>
-                            <entry>
-<key>kerberos-credentials-service</key>
-                            </entry>
-                            <entry>
-<key>sasl.kerberos.principal</key>
-                            </entry>
-                            <entry>
-<key>sasl.kerberos.keytab</key>
-                            </entry>
-                            <entry>
-<key>ssl.context.service</key>
-                            </entry>
-                            <entry>
-<key>topic</key>
-<value>${kafka_topic}</value>
-                            </entry>
-                            <entry>
-<key>topic_type</key>
-<value>names</value>
-                            </entry>
-                            <entry>
-<key>honor-transactions</key>
-<value>true</value>
-                            </entry>
-                            <entry>
-<key>group.id</key>
-<value>1</value>
-                            </entry>
-                            <entry>
-<key>auto.offset.reset</key>
-<value>latest</value>
-                            </entry>
-                            <entry>
-<key>key-attribute-encoding</key>
-<value>utf-8</value>
-                            </entry>
-                            <entry>
-<key>message-demarcator</key>
-                            </entry>
-                            <entry>
-<key>message-header-encoding</key>
-<value>UTF-8</value>
-                            </entry>
-                            <entry>
-<key>header-name-regex</key>
-                            </entry>
-                            <entry>
-<key>max.poll.records</key>
-<value>10000</value>
-                            </entry>
-                            <entry>
-<key>max-uncommit-offset-wait</key>
-<value>1 secs</value>
-                            </entry>
-                        </properties>
-                        <runDurationMillis>0</runDurationMillis>
-                        <schedulingPeriod>0 sec</schedulingPeriod>
-                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
-                        <yieldDuration>1 sec</yieldDuration>
-                    </config>
-                    <executionNodeRestricted>false</executionNodeRestricted>
-                    <name>ConsumeKafka_1_0</name>
-                    <relationships>
-                        <autoTerminate>false</autoTerminate>
-                        <name>success</name>
-                    </relationships>
-                    <state>DISABLED</state>
-                    <style/>
-                    <type>org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_1_0</type>
-                </processors>
             </contents>
             <flowfileConcurrency>UNBOUNDED</flowfileConcurrency>
             <flowfileOutboundPolicy>STREAM_WHEN_AVAILABLE</flowfileOutboundPolicy>
@@ -945,5 +642,5 @@
             </variables>
         </processGroups>
     </snippet>
-    <timestamp>09/14/2021 01:43:03 UTC</timestamp>
+    <timestamp>09/15/2021 01:13:44 UTC</timestamp>
 </template>

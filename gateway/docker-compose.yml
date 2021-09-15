@@ -2,7 +2,7 @@ version: '3'
 services:
   mongodb:
     image: mongo:3.5
-    container_name: iot-ds-mongodb-t
+    container_name: iot-ds-mongodb
     volumes:
       - mongodb-data:/data/db
     environment:
@@ -15,7 +15,7 @@ services:
       - regional_gateway-network
   minio:
     image: minio/minio
-    container_name: iot-ds-minio-t
+    container_name: iot-ds-minio
     volumes:
       - minio-data:/data
       - minio-config:/root/.minio
@@ -28,7 +28,7 @@ services:
     networks: 
       - regional_gateway-network
   rabbitmq:
-    build: ../builds/IoT-data-simulator/rabbitmq
+    build: ./builds/IoT-data-simulator/rabbitmq
     image: ibagroup/iot-data-simulator-rabbitmq:0.1
     container_name: iot-ds-rabbitmq-t
     volumes:
@@ -44,9 +44,9 @@ services:
     networks: 
       - regional_gateway-network
   services:
-    build: ../builds/IoT-data-simulator/services
+    build: ./builds/IoT-data-simulator/services
     image: ibagroup/iot-data-simulator-services:1.1.0
-    container_name: iot-ds-services-t
+    container_name: iot-ds-services
     depends_on:
       - mongodb
       - minio
@@ -71,9 +71,9 @@ services:
     networks: 
       - regional_gateway-network
   ui:
-    build: ../builds/IoT-data-simulator/ui
+    build: ./builds/IoT-data-simulator/ui
     image: ibagroup/iot-data-simulator-ui:1.1.0
-    container_name: iot-ds-ui-t
+    container_name: iot-ds-ui
     depends_on:
       - services
     environment:
@@ -89,9 +89,9 @@ services:
       - regional_gateway-network
     
   data-sender:
-    build: ../builds/IoT-data-simulator/data-sender
+    build: ./builds/IoT-data-simulator/data-sender
     image: ibagroup/iot-data-simulator-sender:1.1.0
-    container_name: iot-ds-data-sender-t
+    container_name: iot-ds-data-sender
     depends_on:
       - rabbitmq
     ports:
@@ -105,12 +105,11 @@ services:
     networks: 
       - regional_gateway-network
     
-
 ### MQTT
 
   mosquitto:
     image: ruimarinho/mosquitto
-    container_name: mosquitto-t
+    container_name: mosquitto
     expose:
       - "1883"
       - "9001"
@@ -119,8 +118,8 @@ services:
       - "9001:9001"
     networks: 
       - regional_gateway-network
-    # volumes:
-    #   - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    volumes:
+      - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
 ## Nifi
 
