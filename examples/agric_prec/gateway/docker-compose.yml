@@ -1,0 +1,52 @@
+version: '3'
+services:
+### MQTT
+
+  mosquitto-1:
+    image: ruimarinho/mosquitto
+    container_name: mosquitto_1
+    expose:
+      - "1883"
+      - "9001"
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    networks: 
+      - regional_gateway-network
+      - mqtt-network
+    volumes:
+      - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+## Nifi
+
+  nifi-1:
+    image: apache/nifi:1.13.2
+    container_name: nifi-gateway_1
+    environment:
+      JVM_OPTS: "-Xmx4g -Xms4g -XX:MaxPermSize=4096m"
+    ports:
+      - 8081:8080
+      - 9990:9990
+      - 9991:9991
+      - 9992:9992
+    volumes:
+      - nifi-data-gateway:/opt/nifi
+    networks: 
+      - regional_gateway-network
+      # - gatweay_default
+     
+volumes:
+  mongodb-data:
+  minio-data:
+  minio-config:
+  rabbitmq-data:
+  ui-data:
+  nifi-data-gateway:
+
+  
+networks: 
+  mqtt-network:
+    driver: bridge
+  regional_gateway-network:
+    external: true
+  
