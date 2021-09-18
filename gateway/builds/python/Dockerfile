@@ -6,6 +6,8 @@ COPY ./code/requirements.txt ./
 RUN pip install -r requirements.txt
 ENV PYTHONUNBUFFERED 1
 COPY ./code/scripts/* ./
-# CMD ["mqtt_consumer.py"]
+COPY ./.env ./.env
 # ENTRYPOINT ["python3"]
-CMD tail -f /dev/null
+CMD ["python","/usr/src/app/mqtt_consumer.py"]
+
+# CMD tail -f /dev/null

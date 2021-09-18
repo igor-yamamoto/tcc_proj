@@ -1,23 +1,29 @@
 from paho.mqtt import client as mqtt_client
 from kafka import KafkaProducer
-import decouple
+from decouple import config
 import random
 
-# print(decouple.config('MQTT_TOPIC'))
+# print(decouple.)
 
-broker = 'mosquitto'
-topic = 'devices/device1'
-port = 1883
+broker = config('MQTT_URL')
+topic = config('MQTT_TOPIC')
+port = int(config('MQTT_PORT'))
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 
-producer = KafkaProducer(
-    bootstrap_servers=['broker:29092'],
+KAFKA_URL = config('KAFKA_URL')
+KAFKA_PORT = config('KAFKA_PORT')
+KAFKA_BROKER = f'{KAFKA_URL}:{KAFKA_PORT}'
+KAFKA_TOPIC = config('KAFKA_TOPIC')
+
+print(KAFKA_BROKER)
+
+producer = KafkaProducer(bootstrap_servers=[KAFKA_BROKER],
     # value_serializer=lambda x: dumps(x).encode(‘utf-8’)
 )
 
 def produce_kafka(message):
-    producer.send('test-topic', value=bytes(message))
-    producer.flush()
+    producer.send(KAFKA_TOPIC, value=bytes(message))
+    # producer.flush()
 
 def connect_mqtt():
     def on_connect(client, userdata, flags, rc):
@@ -25,9 +31,7 @@ def connect_mqtt():
             print("Connected to MQTT Broker!")
         else:
             print("Failed to connect, return code %d\n", rc)
-    # Set Connecting Client ID
     client = mqtt_client.Client(client_id)
-    # client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
     return client
@@ -38,8 +42,6 @@ def subscribe(client: mqtt_client):
         print(f"Received `{message}` from `{msg.topic}` topic")
 
         print("sending message to kafka")
-        print(f"encoded message: {(message.encode('utf-8'))}")
-        print(f"byte-encoded message: {bytes(message.encode('utf-8'))}")
         produce_kafka(message.encode('utf-8'))
 
     client.subscribe(topic)

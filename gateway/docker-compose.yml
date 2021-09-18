@@ -20,6 +20,8 @@ services:
   python:
     build: ./builds/python/
     container_name: python-processor
+    depends_on: 
+      - mosquitto
     stdin_open: true
     tty: true
     # command: -c "tail -f /dev/null"
