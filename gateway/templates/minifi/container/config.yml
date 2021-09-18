@@ -1,0 +1,131 @@
+MiNiFi Config Version: 3
+Flow Controller:
+  name: template-teste
+  comment: ''
+Core Properties:
+  flow controller graceful shutdown period: 10 sec
+  flow service write delay interval: 500 ms
+  administrative yield duration: 30 sec
+  bored yield duration: 10 millis
+  max concurrent threads: 1
+  variable registry properties: ''
+FlowFile Repository:
+  partitions: 256
+  checkpoint interval: 2 mins
+  always sync: false
+  Swap:
+    threshold: 20000
+    in period: 5 sec
+    in threads: 1
+    out period: 5 sec
+    out threads: 4
+Content Repository:
+  content claim max appendable size: 10 MB
+  content claim max flow files: 100
+  always sync: false
+Provenance Repository:
+  provenance rollover time: 1 min
+  implementation: org.apache.nifi.provenance.MiNiFiPersistentProvenanceRepository
+Component Status Repository:
+  buffer size: 1440
+  snapshot frequency: 1 min
+Security Properties:
+  keystore: ''
+  keystore type: ''
+  keystore password: ''
+  key password: ''
+  truststore: ''
+  truststore type: ''
+  truststore password: ''
+  ssl protocol: ''
+  Sensitive Props:
+    key:
+    algorithm: PBEWITHMD5AND256BITAES-CBC-OPENSSL
+    provider: BC
+Processors:
+- id: c7c88dca-f520-390b-0000-000000000000
+  name: ConsumeMQTT
+  class: org.apache.nifi.processors.mqtt.ConsumeMQTT
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - parse.failure
+  Properties:
+    Broker URI: tcp://mosquitto:1883
+    Client ID:
+    Connection Timeout (seconds): '30'
+    Group ID:
+    Keep Alive Interval (seconds): '60'
+    Last Will Message:
+    Last Will QoS Level:
+    Last Will Retain:
+    Last Will Topic:
+    MQTT Specification Version: '0'
+    Max Queue Size: '1000'
+    Password:
+    Quality of Service(QoS): '0'
+    SSL Context Service:
+    Session state: 'true'
+    Topic Filter: devices/device1
+    Username:
+    add-attributes-as-fields: 'true'
+    message-demarcator:
+    record-reader:
+    record-writer:
+- id: a72f8e50-3d21-30ba-0000-000000000000
+  name: PublishKafka_1_0
+  class: org.apache.nifi.processors.kafka.pubsub.PublishKafka_1_0
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - failure
+  - success
+  Properties:
+    ack.wait.time: 5 secs
+    acks: '0'
+    attribute-name-regex:
+    bootstrap.servers: broker:29092
+    compression.type: none
+    kafka-key:
+    kerberos-credentials-service:
+    key-attribute-encoding: utf-8
+    max.block.ms: 5 sec
+    max.request.size: 1 MB
+    message-demarcator:
+    message-header-encoding: UTF-8
+    partition:
+    partitioner.class: org.apache.kafka.clients.producer.internals.DefaultPartitioner
+    sasl.kerberos.keytab:
+    sasl.kerberos.principal:
+    sasl.kerberos.service.name:
+    security.protocol: PLAINTEXT
+    ssl.context.service:
+    topic: test-topic
+    transactional-id-prefix:
+    use-transactions: 'false'
+Controller Services: []
+Process Groups: []
+Input Ports: []
+Output Ports: []
+Funnels: []
+Connections:
+- id: 7204a64f-e27e-3cb9-0000-000000000000
+  name: ConsumeMQTT/Message/PublishKafka_1_0
+  source id: c7c88dca-f520-390b-0000-000000000000
+  source relationship names:
+  - Message
+  destination id: a72f8e50-3d21-30ba-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+Remote Process Groups: []
+NiFi Properties Overrides: {}

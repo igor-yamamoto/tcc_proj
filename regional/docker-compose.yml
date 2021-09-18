@@ -54,6 +54,7 @@ services:
       - 9993:9992
     volumes:
       - nifi-data-regional:/opt/nifi
+      # - ./templates/test/:/opt/nifi/nifi-current/lib/
     networks: 
       - gateway-network
      

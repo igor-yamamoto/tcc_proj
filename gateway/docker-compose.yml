@@ -124,21 +124,31 @@ services:
 
 ## Nifi
 
-  nifi:
-    image: apache/nifi:1.13.2
-    container_name: nifi-gateway
-    environment:
-      JVM_OPTS: "-Xmx4g -Xms4g -XX:MaxPermSize=4096m"
+  minifi:
+    image: apache/nifi-minifi:0.5.0
+    container_name: minifi-gateway
+    # environment:
+    #   JVM_OPTS: "-Xmx4g -Xms4g -XX:MaxPermSize=4096m"
     ports:
       - 8081:8080
-      - 9990:9990
-      - 9991:9991
-      - 9992:9992
     volumes:
-      - nifi-data-gateway:/opt/nifi
+      # - nifi-data-gateway:/opt/nifi
+      - ./templates/minifi/container/config.yml:/opt/minifi/minifi-0.5.0/config.yml
     networks: 
       - regional_gateway-network
       # - gatweay_default
+
+  minifi-toolkit:
+    image: itarano/minifi-toolkit:0.5.0
+    container_name: minifi-toolkit
+    # run: "./${MINIFI_TOOLKIT_HOME}/bin/config.sh /opt/minifi/IoT-Stream-Gateway.xml /opt/minifi/config.yml"
+    entrypoint: /bin/sh
+    # command: -c "./config.sh transform /opt/minifi/template-teste.xml /opt/minifi/config.yml"
+    command: -c "ls ../lib"
+    # command: -c "pwd"
+    volumes:
+      - ./templates/minifi/container/:/opt/minifi/
+      # - ./templates/minifi/container/:/opt/minifi2/
      
 volumes:
   mongodb-data:
@@ -146,7 +156,7 @@ volumes:
   minio-config:
   rabbitmq-data:
   ui-data:
-  nifi-data-gateway:
+  # nifi-data-gateway:
 
   
 networks: 

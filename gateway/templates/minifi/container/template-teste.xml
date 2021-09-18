@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.3">
+    <description></description>
+    <groupId>bb553176-3b0b-3f81-b70f-bb211f58e1b5</groupId>
+    <name>template-teste</name>
+    <snippet>
+        <connections>
+            <id>7204a64f-e27e-3cb9-0000-000000000000</id>
+            <parentGroupId>5232d214-b0ec-33e1-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5232d214-b0ec-33e1-0000-000000000000</groupId>
+                <id>a72f8e50-3d21-30ba-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>Message</selectedRelationships>
+            <source>
+                <groupId>5232d214-b0ec-33e1-0000-000000000000</groupId>
+                <id>c7c88dca-f520-390b-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <labels>
+            <id>49988ccf-68f0-3080-0000-000000000000</id>
+            <parentGroupId>5232d214-b0ec-33e1-0000-000000000000</parentGroupId>
+            <position>
+                <x>112.0</x>
+                <y>0.0</y>
+            </position>
+            <height>40.0</height>
+            <label>GATEWAY</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>22px</value>
+                </entry>
+            </style>
+            <width>120.0</width>
+        </labels>
+        <processors>
+            <id>a72f8e50-3d21-30ba-0000-000000000000</id>
+            <parentGroupId>5232d214-b0ec-33e1-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>384.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-kafka-1-0-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.13.2</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>
+                            <name>bootstrap.servers</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>
+                            <name>security.protocol</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                        <value>
+                            <name>sasl.kerberos.service.name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+                            <name>kerberos-credentials-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                        <value>
+                            <name>sasl.kerberos.principal</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                        <value>
+                            <name>sasl.kerberos.keytab</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>ssl.context.service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>
+                            <name>topic</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>acks</key>
+                        <value>
+                            <name>acks</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>use-transactions</key>
+                        <value>
+                            <name>use-transactions</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>transactional-id-prefix</key>
+                        <value>
+                            <name>transactional-id-prefix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>attribute-name-regex</key>
+                        <value>
+                            <name>attribute-name-regex</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>
+                            <name>message-header-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>kafka-key</key>
+                        <value>
+                            <name>kafka-key</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>key-attribute-encoding</key>
+                        <value>
+                            <name>key-attribute-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                        <value>
+                            <name>message-demarcator</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max.request.size</key>
+                        <value>
+                            <name>max.request.size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ack.wait.time</key>
+                        <value>
+                            <name>ack.wait.time</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max.block.ms</key>
+                        <value>
+                            <name>max.block.ms</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>partitioner.class</key>
+                        <value>
+                            <name>partitioner.class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>partition</key>
+                        <value>
+                            <name>partition</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>compression.type</key>
+                        <value>
+                            <name>compression.type</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>broker:29092</value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>PLAINTEXT</value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>test-topic</value>
+                    </entry>
+                    <entry>
+                        <key>acks</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>use-transactions</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>transactional-id-prefix</key>
+                    </entry>
+                    <entry>
+                        <key>attribute-name-regex</key>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>UTF-8</value>
+                    </entry>
+                    <entry>
+                        <key>kafka-key</key>
+                    </entry>
+                    <entry>
+                        <key>key-attribute-encoding</key>
+                        <value>utf-8</value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                    </entry>
+                    <entry>
+                        <key>max.request.size</key>
+                        <value>1 MB</value>
+                    </entry>
+                    <entry>
+                        <key>ack.wait.time</key>
+                        <value>5 secs</value>
+                    </entry>
+                    <entry>
+                        <key>max.block.ms</key>
+                        <value>5 sec</value>
+                    </entry>
+                    <entry>
+                        <key>partitioner.class</key>
+                        <value>org.apache.kafka.clients.producer.internals.DefaultPartitioner</value>
+                    </entry>
+                    <entry>
+                        <key>partition</key>
+                    </entry>
+                    <entry>
+                        <key>compression.type</key>
+                        <value>none</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>PublishKafka_1_0</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka_1_0</type>
+        </processors>
+        <processors>
+            <id>c7c88dca-f520-390b-0000-000000000000</id>
+            <parentGroupId>5232d214-b0ec-33e1-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>56.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-mqtt-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.13.2</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Broker URI</key>
+                        <value>
+                            <name>Broker URI</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Client ID</key>
+                        <value>
+                            <name>Client ID</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Username</key>
+                        <value>
+                            <name>Username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Password</key>
+                        <value>
+                            <name>Password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>SSL Context Service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Last Will Topic</key>
+                        <value>
+                            <name>Last Will Topic</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Last Will Message</key>
+                        <value>
+                            <name>Last Will Message</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Last Will Retain</key>
+                        <value>
+                            <name>Last Will Retain</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Last Will QoS Level</key>
+                        <value>
+                            <name>Last Will QoS Level</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Session state</key>
+                        <value>
+                            <name>Session state</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>MQTT Specification Version</key>
+                        <value>
+                            <name>MQTT Specification Version</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Connection Timeout (seconds)</key>
+                        <value>
+                            <name>Connection Timeout (seconds)</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Keep Alive Interval (seconds)</key>
+                        <value>
+                            <name>Keep Alive Interval (seconds)</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Group ID</key>
+                        <value>
+                            <name>Group ID</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Topic Filter</key>
+                        <value>
+                            <name>Topic Filter</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Quality of Service(QoS)</key>
+                        <value>
+                            <name>Quality of Service(QoS)</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Max Queue Size</key>
+                        <value>
+                            <name>Max Queue Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>record-reader</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
+                            <name>record-reader</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>record-writer</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.serialization.RecordSetWriterFactory</identifiesControllerService>
+                            <name>record-writer</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>add-attributes-as-fields</key>
+                        <value>
+                            <name>add-attributes-as-fields</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                        <value>
+                            <name>message-demarcator</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Broker URI</key>
+                        <value>tcp://mosquitto:1883</value>
+                    </entry>
+                    <entry>
+                        <key>Client ID</key>
+                    </entry>
+                    <entry>
+                        <key>Username</key>
+                    </entry>
+                    <entry>
+                        <key>Password</key>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                    </entry>
+                    <entry>
+                        <key>Last Will Topic</key>
+                    </entry>
+                    <entry>
+                        <key>Last Will Message</key>
+                    </entry>
+                    <entry>
+                        <key>Last Will Retain</key>
+                    </entry>
+                    <entry>
+                        <key>Last Will QoS Level</key>
+                    </entry>
+                    <entry>
+                        <key>Session state</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>MQTT Specification Version</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>Connection Timeout (seconds)</key>
+                        <value>30</value>
+                    </entry>
+                    <entry>
+                        <key>Keep Alive Interval (seconds)</key>
+                        <value>60</value>
+                    </entry>
+                    <entry>
+                        <key>Group ID</key>
+                    </entry>
+                    <entry>
+                        <key>Topic Filter</key>
+                        <value>devices/device1</value>
+                    </entry>
+                    <entry>
+                        <key>Quality of Service(QoS)</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>Max Queue Size</key>
+                        <value>1000</value>
+                    </entry>
+                    <entry>
+                        <key>record-reader</key>
+                    </entry>
+                    <entry>
+                        <key>record-writer</key>
+                    </entry>
+                    <entry>
+                        <key>add-attributes-as-fields</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ConsumeMQTT</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>Message</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>parse.failure</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.mqtt.ConsumeMQTT</type>
+        </processors>
+    </snippet>
+    <timestamp>09/18/2021 03:41:06 UTC</timestamp>
+</template>
