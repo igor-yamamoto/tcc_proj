@@ -1,10 +1,9 @@
 version: '3'
 services:
-### MQTT
 
-  mosquitto-1:
+  mosquitto-a:
     image: ruimarinho/mosquitto
-    container_name: mosquitto_1
+    container_name: mosquitto-A
     expose:
       - "1883"
       - "9001"
@@ -12,28 +11,27 @@ services:
       - "1883:1883"
       - "9001:9001"
     networks: 
-      - regional_gateway-network
-      - mqtt-network
+      # - regional_gateway-network
+      - mqtt-network-A
     volumes:
       - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
-## Nifi
-
-  nifi-1:
-    image: apache/nifi:1.13.2
-    container_name: nifi-gateway_1
-    environment:
-      JVM_OPTS: "-Xmx4g -Xms4g -XX:MaxPermSize=4096m"
-    ports:
-      - 8081:8080
-      - 9990:9990
-      - 9991:9991
-      - 9992:9992
-    volumes:
-      - nifi-data-gateway:/opt/nifi
+## Python
+  python:
+    build: ./builds/python/
+    container_name: python-processor-A
+    depends_on: 
+      - mosquitto-a
+    stdin_open: true
+    tty: true
+    # command: -c "tail -f /dev/null"
     networks: 
       - regional_gateway-network
-      # - gatweay_default
+      - mqtt-network-A
+    # volumes:
+    #   - ./python_data/:./
+
+
      
 volumes:
   mongodb-data:
@@ -45,7 +43,7 @@ volumes:
 
   
 networks: 
-  mqtt-network:
+  mqtt-network-A:
     driver: bridge
   regional_gateway-network:
     external: true

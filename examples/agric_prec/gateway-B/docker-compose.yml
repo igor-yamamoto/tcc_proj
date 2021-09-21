@@ -1,0 +1,50 @@
+version: '3'
+services:
+
+  mosquitto-b:
+    image: ruimarinho/mosquitto
+    container_name: mosquitto-B
+    expose:
+      - "1883"
+      - "9001"
+    ports:
+      - "1884:1883"
+      - "9002:9001"
+    networks: 
+      # - regional_gateway-network
+      - mqtt-network-B
+    volumes:
+      - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+## Python
+  python:
+    build: ./builds/python/
+    container_name: python-processor-B
+    depends_on: 
+      - mosquitto-b
+    stdin_open: true
+    tty: true
+    # command: -c "tail -f /dev/null"
+    networks: 
+      - regional_gateway-network
+      - mqtt-network-B
+    # volumes:
+    #   - ./python_data/:./
+
+
+     
+volumes:
+  mongodb-data:
+  minio-data:
+  minio-config:
+  rabbitmq-data:
+  ui-data:
+  nifi-data-gateway:
+
+  
+networks: 
+  mqtt-network-B:
+    driver: bridge
+  regional_gateway-network:
+    external: true
+  
