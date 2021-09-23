@@ -24,7 +24,6 @@ services:
       - mosquitto
     stdin_open: true
     tty: true
-    # command: -c "tail -f /dev/null"
     networks: 
       - regional_gateway-network
       - mqtt-network
