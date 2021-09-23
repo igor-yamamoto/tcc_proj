@@ -140,9 +140,14 @@ class mqtt:
                 print(f"\t Sending message to kafka broker {broker.topic}")
 
             if callable(pipeline):
-                message = pipeline(message)
-
-            broker.produce(message.encode('utf-8'))
+                message_transf = pipeline(message)
+                if message_transf:
+                    message = message_transf
+            if message:
+                try:
+                    broker.produce(message.encode('utf-8'))
+                except:
+                    broker.produce(message)
 
         client.subscribe(self.topic)
         client.on_message = on_message

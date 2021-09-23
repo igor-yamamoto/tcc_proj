@@ -1,4 +1,5 @@
 import connectors as cns
+import pipeline as pl
 
 def pipeline(message):
     return message[0:1]
@@ -6,6 +7,7 @@ def pipeline(message):
 def run():
     mqtt = cns.mqtt()
     kafka = cns.kafka()
+    pipeline = pl.main
 
     mqtt.listen(kafka, pipeline)
 
