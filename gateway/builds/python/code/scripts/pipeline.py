@@ -30,6 +30,8 @@ def main(message):
     if status == 0:
         message, status = allowed_devices(message)
 
-    message = json.dumps(message)
+        if status == 0:
+            message = json.dumps(message)
 
-    return message
+    # message = json.dumps(message)
+            return message

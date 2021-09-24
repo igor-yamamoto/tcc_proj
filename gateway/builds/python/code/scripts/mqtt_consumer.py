@@ -1,8 +1,8 @@
 import connectors as cns
 import pipeline as pl
 
-def pipeline(message):
-    return message[0:1]
+# def pipeline(message):
+#     return message[0:1]
 
 def run():
     mqtt = cns.mqtt()

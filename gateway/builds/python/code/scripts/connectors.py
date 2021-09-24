@@ -141,9 +141,9 @@ class mqtt:
 
             if callable(pipeline):
                 message_transf = pipeline(message)
-                if message_transf:
-                    message = message_transf
-            if message:
+                
+            if message_transf:
+                message = message_transf
                 try:
                     broker.produce(message.encode('utf-8'))
                 except:
