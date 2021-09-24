@@ -1,10 +1,10 @@
 {
     "id": "614931ed0e8e3d0001d82729",
-    "modified": 1632193716,
+    "modified": 1632450160,
     "name": "TCC_SESSION_LUM_A",
     "dataDefinition": {
         "id": "61493be90e8e3d0001d82729",
-        "modified": 1632189644,
+        "modified": 1632448269,
         "name": "luminosity",
         "schema": {
             "metadata": {
@@ -61,7 +61,7 @@
     "devices": [
         {
             "id": "614931510e8e3d0001d82731",
-            "modified": 1632193692,
+            "modified": 1632450151,
             "name": "lum-sensor-1A",
             "targetSystems": [
                 {
@@ -70,7 +70,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [
@@ -90,7 +90,7 @@
         },
         {
             "id": "614931510e8e3d0001d82732",
-            "modified": 1632193709,
+            "modified": 1632450138,
             "name": "lum-sensor-2A",
             "targetSystems": [
                 {
@@ -99,7 +99,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [

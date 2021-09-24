@@ -1,6 +1,6 @@
 {
     "id": "614931ed0e8e3d0001d82727",
-    "modified": 1632193502,
+    "modified": 1632450044,
     "name": "TCC_SESSION_HUM_A",
     "dataDefinition": {
         "id": "614930c60e8e3d0001d82725",
@@ -61,7 +61,7 @@
     "devices": [
         {
             "id": "614931510e8e3d0001d82726",
-            "modified": 1632193482,
+            "modified": 1632450037,
             "name": "humidity-sensor-1A",
             "targetSystems": [
                 {
@@ -70,7 +70,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [
@@ -90,7 +90,7 @@
         },
         {
             "id": "614931510e8e3d0001d82727",
-            "modified": 1632193496,
+            "modified": 1632450023,
             "name": "humidity-sensor-2A",
             "targetSystems": [
                 {
@@ -99,7 +99,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [

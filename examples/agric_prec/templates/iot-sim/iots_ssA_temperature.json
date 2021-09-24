@@ -1,6 +1,6 @@
 {
     "id": "614931ed0e8e3d0001d82728",
-    "modified": 1632193431,
+    "modified": 1632450250,
     "name": "TCC_SESSION_TEMP_A",
     "dataDefinition": {
         "id": "614939c80e8e3d0001d82728",
@@ -61,7 +61,7 @@
     "devices": [
         {
             "id": "614931510e8e3d0001d82728",
-            "modified": 1632193424,
+            "modified": 1632450211,
             "name": "temperature-sensor-1A",
             "targetSystems": [
                 {
@@ -70,7 +70,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [
@@ -90,7 +90,7 @@
         },
         {
             "id": "614931510e8e3d0001d82729",
-            "modified": 1632193408,
+            "modified": 1632450232,
             "name": "temperature-sensor-2A",
             "targetSystems": [
                 {
@@ -99,7 +99,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [
@@ -119,7 +119,7 @@
         },
         {
             "id": "614931510e8e3d0001d82730",
-            "modified": 1632193388,
+            "modified": 1632450244,
             "name": "temperature-sensor-3A",
             "targetSystems": [
                 {
@@ -128,7 +128,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-a:1883",
-                    "topic": "devices"
+                    "topic": "devices/"
                 }
             ],
             "properties": [
