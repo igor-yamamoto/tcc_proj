@@ -1,0 +1,199 @@
+{
+    "id": "614931ed0e8e3d0001d82729",
+    "modified": 1632450160,
+    "name": "TCC_SESSION_LUM_A",
+    "dataDefinition": {
+        "id": "61493be90e8e3d0001d82729",
+        "modified": 1632448269,
+        "name": "luminosity",
+        "schema": {
+            "metadata": {
+                "type": "json"
+            },
+            "type": "object",
+            "properties": {
+                "device_guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "device_guid",
+                        "name": "device_guid",
+                        "description": "devices guid"
+                    }
+                },
+                "luminosity": {
+                    "type": "number",
+                    "metadata": {
+                        "type": "integer",
+                        "position": "luminosity",
+                        "name": "luminosity",
+                        "description": "local luminosity"
+                    }
+                },
+                "guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "guid",
+                        "name": "guid",
+                        "description": "measure's guid"
+                    }
+                },
+                "timestamp": {
+                    "type": "number",
+                    "metadata": {
+                        "format": "seconds",
+                        "position": "timestamp",
+                        "name": "timestamp",
+                        "description": "timestamp",
+                        "type": "timestamp"
+                    }
+                }
+            },
+            "schemaKey": "http://json-schema.org/draft-04/schema#"
+        }
+    },
+    "timer": {
+        "type": "interval",
+        "metric": "seconds",
+        "value": 8
+    },
+    "ticksNumber": 0,
+    "isReplayLooped": false,
+    "devices": [
+        {
+            "id": "614931510e8e3d0001d82731",
+            "modified": 1632450151,
+            "name": "lum-sensor-1A",
+            "targetSystems": [
+                {
+                    "id": "614930cdcba6c847c52916b1",
+                    "modified": 0,
+                    "name": "gateway-mqtt-1",
+                    "type": "mqtt_broker",
+                    "url": "mosquitto-a:1883",
+                    "topic": "devices/"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "longitude",
+                    "value": 128
+                },
+                {
+                    "name": "latitude",
+                    "value": 56772
+                },
+                {
+                    "name": "device_guid",
+                    "value": "3d889d97-cf65-43f3-9014-c638cd221176"
+                }
+            ]
+        },
+        {
+            "id": "614931510e8e3d0001d82732",
+            "modified": 1632450138,
+            "name": "lum-sensor-2A",
+            "targetSystems": [
+                {
+                    "id": "614930cdcba6c847c52916b1",
+                    "modified": 0,
+                    "name": "gateway-mqtt-1",
+                    "type": "mqtt_broker",
+                    "url": "mosquitto-a:1883",
+                    "topic": "devices/"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "longitude",
+                    "value": 130
+                },
+                {
+                    "name": "latitude",
+                    "value": 56777
+                },
+                {
+                    "name": "device_guid",
+                    "value": "e9b1b773-361f-4696-9bb6-a9b318c31ea4"
+                }
+            ]
+        }
+    ],
+    "deviceInjector": {
+        "rule": "round_robin"
+    },
+    "generator": {
+        "type": "schema_based",
+        "schema": {
+            "metadata": {
+                "type": "json"
+            },
+            "type": "object",
+            "properties": {
+                "device_guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "device_guid",
+                        "name": "device_guid",
+                        "description": "devices guid"
+                    },
+                    "rule": {
+                        "type": "device_property",
+                        "propertyName": "device_guid"
+                    }
+                },
+                "luminosity": {
+                    "type": "number",
+                    "metadata": {
+                        "type": "integer",
+                        "position": "luminosity",
+                        "name": "luminosity",
+                        "description": "local luminosity"
+                    },
+                    "rule": {
+                        "type": "random_integer",
+                        "min": 70,
+                        "max": 80
+                    }
+                },
+                "guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "guid",
+                        "name": "guid",
+                        "description": "measure's guid"
+                    },
+                    "rule": {
+                        "type": "uuid",
+                        "prefix": "",
+                        "postfix": ""
+                    }
+                },
+                "timestamp": {
+                    "type": "number",
+                    "metadata": {
+                        "format": "seconds",
+                        "position": "timestamp",
+                        "name": "timestamp",
+                        "description": "timestamp",
+                        "type": "timestamp"
+                    },
+                    "rule": {
+                        "type": "current_time",
+                        "metric": "milliseconds",
+                        "shift": 0
+                    }
+                }
+            },
+            "schemaKey": "http://json-schema.org/draft-04/schema#"
+        }
+    },
+    "targetSystem": {
+        "id": "61492fddb75df6adb3483f97",
+        "modified": 1632193292,
+        "name": "gateway-mqtt-A",
+        "type": "mqtt_broker",
+        "url": "mosquitto-a:1883",
+        "topic": "devices/"
+    },
+    "replayLooped": false
+}

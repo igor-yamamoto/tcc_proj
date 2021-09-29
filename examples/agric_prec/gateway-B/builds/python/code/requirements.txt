@@ -1,0 +1,4 @@
+paho-mqtt
+python-decouple
+kafka-python
+# json

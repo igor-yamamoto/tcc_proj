@@ -1,0 +1,228 @@
+{
+    "id": "614931ed0e8e3d0001d82728",
+    "modified": 1632450250,
+    "name": "TCC_SESSION_TEMP_A",
+    "dataDefinition": {
+        "id": "614939c80e8e3d0001d82728",
+        "modified": 1632188872,
+        "name": "TEMPERATURE",
+        "schema": {
+            "metadata": {
+                "type": "json"
+            },
+            "type": "object",
+            "properties": {
+                "device_guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "device_guid",
+                        "name": "device_guid",
+                        "description": "devices guid"
+                    }
+                },
+                "temperature": {
+                    "type": "number",
+                    "metadata": {
+                        "type": "integer",
+                        "position": "temperature",
+                        "name": "humidity",
+                        "description": "local temperature"
+                    }
+                },
+                "guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "guid",
+                        "name": "guid",
+                        "description": "measure's guid"
+                    }
+                },
+                "timestamp": {
+                    "type": "number",
+                    "metadata": {
+                        "format": "seconds",
+                        "position": "timestamp",
+                        "name": "timestamp",
+                        "description": "timestamp",
+                        "type": "timestamp"
+                    }
+                }
+            },
+            "schemaKey": "http://json-schema.org/draft-04/schema#"
+        }
+    },
+    "timer": {
+        "type": "interval",
+        "metric": "seconds",
+        "value": 1
+    },
+    "ticksNumber": 0,
+    "isReplayLooped": false,
+    "devices": [
+        {
+            "id": "614931510e8e3d0001d82728",
+            "modified": 1632450211,
+            "name": "temperature-sensor-1A",
+            "targetSystems": [
+                {
+                    "id": "614930cdcba6c847c52916b1",
+                    "modified": 0,
+                    "name": "gateway-mqtt-1",
+                    "type": "mqtt_broker",
+                    "url": "mosquitto-a:1883",
+                    "topic": "devices/"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "longitude",
+                    "value": 130
+                },
+                {
+                    "name": "latitude",
+                    "value": 56799
+                },
+                {
+                    "name": "device_guid",
+                    "value": "1d373921-8f71-47ac-b963-0af4bccccde8"
+                }
+            ]
+        },
+        {
+            "id": "614931510e8e3d0001d82729",
+            "modified": 1632450232,
+            "name": "temperature-sensor-2A",
+            "targetSystems": [
+                {
+                    "id": "614930cdcba6c847c52916b1",
+                    "modified": 0,
+                    "name": "gateway-mqtt-1",
+                    "type": "mqtt_broker",
+                    "url": "mosquitto-a:1883",
+                    "topic": "devices/"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "longitude",
+                    "value": 115
+                },
+                {
+                    "name": "latitude",
+                    "value": 56799
+                },
+                {
+                    "name": "device_guid",
+                    "value": "2e44ce86-073f-48a7-b450-b73f4207efd4"
+                }
+            ]
+        },
+        {
+            "id": "614931510e8e3d0001d82730",
+            "modified": 1632450244,
+            "name": "temperature-sensor-3A",
+            "targetSystems": [
+                {
+                    "id": "614930cdcba6c847c52916b1",
+                    "modified": 0,
+                    "name": "gateway-mqtt-1",
+                    "type": "mqtt_broker",
+                    "url": "mosquitto-a:1883",
+                    "topic": "devices/"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "longitude",
+                    "value": 120
+                },
+                {
+                    "name": "latitude",
+                    "value": 56784
+                },
+                {
+                    "name": "device_guid",
+                    "value": "2e44ce86-073f-48a7-b450-b73f4207efd4"
+                }
+            ]
+        }
+    ],
+    "deviceInjector": {
+        "rule": "round_robin"
+    },
+    "generator": {
+        "type": "schema_based",
+        "schema": {
+            "metadata": {
+                "type": "json"
+            },
+            "type": "object",
+            "properties": {
+                "device_guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "device_guid",
+                        "name": "device_guid",
+                        "description": "devices guid"
+                    },
+                    "rule": {
+                        "type": "device_property",
+                        "propertyName": "device_guid"
+                    }
+                },
+                "temperature": {
+                    "type": "number",
+                    "metadata": {
+                        "type": "integer",
+                        "position": "temperature",
+                        "name": "humidity",
+                        "description": "local temperature"
+                    },
+                    "rule": {
+                        "type": "random_integer",
+                        "min": 31,
+                        "max": 34
+                    }
+                },
+                "guid": {
+                    "type": "string",
+                    "metadata": {
+                        "position": "guid",
+                        "name": "guid",
+                        "description": "measure's guid"
+                    },
+                    "rule": {
+                        "type": "uuid",
+                        "prefix": "",
+                        "postfix": ""
+                    }
+                },
+                "timestamp": {
+                    "type": "number",
+                    "metadata": {
+                        "format": "seconds",
+                        "position": "timestamp",
+                        "name": "timestamp",
+                        "description": "timestamp",
+                        "type": "timestamp"
+                    },
+                    "rule": {
+                        "type": "current_time",
+                        "metric": "milliseconds",
+                        "shift": 0
+                    }
+                }
+            },
+            "schemaKey": "http://json-schema.org/draft-04/schema#"
+        }
+    },
+    "targetSystem": {
+        "id": "61492fddb75df6adb3483f97",
+        "modified": 1632193292,
+        "name": "gateway-mqtt-A",
+        "type": "mqtt_broker",
+        "url": "mosquitto-a:1883",
+        "topic": "devices/"
+    },
+    "replayLooped": false
+}

@@ -1,9 +1,9 @@
 version: '3'
 services:
 
-  mosquitto:
+  mosquitto-a:
     image: ruimarinho/mosquitto
-    container_name: mosquitto
+    container_name: mosquitto-A
     expose:
       - "1883"
       - "9001"
@@ -12,21 +12,22 @@ services:
       - "9001:9001"
     networks: 
       # - regional_gateway-network
-      - mqtt-network
+      - mqtt-network-A
     volumes:
       - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
 ## Python
   python:
     build: ./builds/python/
-    container_name: python-processor
+    container_name: python-processor-A
     depends_on: 
-      - mosquitto
+      - mosquitto-a
     stdin_open: true
     tty: true
+    # command: -c "tail -f /dev/null"
     networks: 
       - regional_gateway-network
-      - mqtt-network
+      - mqtt-network-A
     # volumes:
     #   - ./python_data/:./
 
@@ -42,7 +43,7 @@ volumes:
 
   
 networks: 
-  mqtt-network:
+  mqtt-network-A:
     driver: bridge
   regional_gateway-network:
     external: true
