@@ -127,6 +127,7 @@ class mqtt:
 
         client = mqtt_client.Client(self.client_id)
         client.on_connect = on_connect
+        print(self.broker, self.port)
         client.connect(self.broker, self.port)
         return client
 
