@@ -108,6 +108,7 @@ class mqtt:
 
     def connect(self):
         def on_connect(client, userdata, flags, rc):
+            type(rc)
             if rc == 0:
                 print("Connected to MQTT Broker!")
             else:
@@ -138,13 +139,12 @@ class mqtt:
             if self.debug_mode:
                 print(f"Received `{message}` from `{msg.topic}` topic")
 
-                print(f"\t Sending message to kafka broker {broker.topic}")
-
             if callable(pipeline):
                 message_transf = pipeline(message)
                 
             if message_transf:
                 message = message_transf
+                print(f"\t Sending message to kafka broker {broker.topic}")
                 try:
                     broker.produce(message.encode('utf-8'))
                 except:
