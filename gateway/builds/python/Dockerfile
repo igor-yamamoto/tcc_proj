@@ -1,4 +1,4 @@
-FROM arm64v8/python:3.9.7-alpine3.14
+FROM amd64/python:3.9.7-alpine3.14
 RUN apk update 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app

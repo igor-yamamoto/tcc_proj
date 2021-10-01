@@ -38,7 +38,7 @@ class kafka:
     def connect(self):
         connection_test = self.consume()
         if connection_test:
-            print("Connected to KAFKA Broker!")
+            print(f"Connected to KAFKA Broker! \n\tbroker: {self.broker} \n\ttopic: {self.topic}")
             print("Establishing producer connection to broker")
 
             self.producer = KafkaProducer(
@@ -110,7 +110,7 @@ class mqtt:
         def on_connect(client, userdata, flags, rc):
             type(rc)
             if rc == 0:
-                print("Connected to MQTT Broker!")
+                print(f"Connected to MQTT Broker! \n\tbroker: {self.broker}:{self.port} \n\ttopic: {self.topic}")
             else:
                 if self.attempt_retry:
                     while self.retry_count <= self.max_retries:
