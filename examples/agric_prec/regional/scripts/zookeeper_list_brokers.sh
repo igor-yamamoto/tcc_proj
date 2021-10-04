@@ -1,0 +1,1 @@
+docker-compose exec zookeeper zookeeper-shell localhost:2181 ls /brokers/ids

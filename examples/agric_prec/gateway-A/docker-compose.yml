@@ -17,19 +17,16 @@ services:
       - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
 ## Python
-  python:
+  python-a:
     build: ./builds/python/
     container_name: python-processor-A
     depends_on: 
       - mosquitto-a
     stdin_open: true
     tty: true
-    # command: -c "tail -f /dev/null"
     networks: 
       - regional_gateway-network
       - mqtt-network-A
-    # volumes:
-    #   - ./python_data/:./
 
 
      
