@@ -1,5 +1,5 @@
 docker-compose exec broker-A \
-    kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 3 --partitions 1 --topic devices-temperature  --if-not-exists 
+    kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 2 --partitions 10 --topic devices-temperature  --if-not-exists 
 
 # docker-compose exec broker-A \
 #     kafka-topics --create --topic devices-humidity --partitions 1 --replication-factor 2 --if-not-exists --zookeeper zookeeper:2181
