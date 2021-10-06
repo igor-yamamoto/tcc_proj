@@ -1,9 +1,9 @@
 version: '3'
 services:
 
-  mosquitto-a:
+  mosquitto-A:
     image: ruimarinho/mosquitto
-    container_name: mosquitto-A
+    container_name: mosquitto-a
     expose:
       - "1883"
       - "9001"
@@ -21,7 +21,7 @@ services:
     build: ./builds/python/
     container_name: python-processor-A
     depends_on: 
-      - mosquitto-a
+      - mosquitto-A
     stdin_open: true
     tty: true
     networks: 

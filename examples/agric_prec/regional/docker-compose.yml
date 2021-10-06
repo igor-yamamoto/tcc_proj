@@ -15,7 +15,7 @@ services:
       
   broker-A:
     image: confluentinc/cp-kafka:5.5.1
-    hostname: broker-a
+    hostname: broker-a 
     container_name: broker-a
     depends_on:
       - zookeeper
