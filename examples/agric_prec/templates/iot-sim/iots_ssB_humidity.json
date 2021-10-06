@@ -1,6 +1,6 @@
 {
     "id": "614931ed0e8e3d0001d92727",
-    "modified": 1632449962,
+    "modified": 1633484860,
     "name": "TCC_SESSION_HUM_B",
     "dataDefinition": {
         "id": "614930c60e8e3d0001d82725",
@@ -61,7 +61,7 @@
     "devices": [
         {
             "id": "614931510e8e3d0001d83527",
-            "modified": 1632449903,
+            "modified": 1633484819,
             "name": "humidity-sensor-3B",
             "targetSystems": [
                 {
@@ -70,7 +70,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -90,7 +90,7 @@
         },
         {
             "id": "614931510e8e3d0001d83926",
-            "modified": 1632449936,
+            "modified": 1633484850,
             "name": "humidity-sensor-1B",
             "targetSystems": [
                 {
@@ -99,7 +99,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -119,7 +119,7 @@
         },
         {
             "id": "614931510e8e3d0001d83927",
-            "modified": 1632449954,
+            "modified": 1633484800,
             "name": "humidity-sensor-2B",
             "targetSystems": [
                 {
@@ -128,7 +128,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -148,7 +148,7 @@
         },
         {
             "id": "614931510e8e3d9001d83927",
-            "modified": 1632449920,
+            "modified": 1633484836,
             "name": "humidity-sensor-4B",
             "targetSystems": [
                 {
@@ -157,7 +157,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -247,11 +247,11 @@
     },
     "targetSystem": {
         "id": "61493527827423d4774a9ad7",
-        "modified": 1632448308,
+        "modified": 1633484726,
         "name": "gateway-mqtt-B",
         "type": "mqtt_broker",
         "url": "mosquitto-b:1883",
-        "topic": "devices/"
+        "topic": "devices"
     },
     "replayLooped": false
 }

@@ -1,9 +1,9 @@
 version: '3'
 services:
 
-  mosquitto-b:
+  mosquitto-B:
     image: ruimarinho/mosquitto
-    container_name: mosquitto-B
+    container_name: mosquitto-b
     expose:
       - "1883"
       - "9001"
@@ -17,19 +17,16 @@ services:
       - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
 ## Python
-  python:
+  python-b:
     build: ./builds/python/
     container_name: python-processor-B
     depends_on: 
-      - mosquitto-b
+      - mosquitto-B
     stdin_open: true
     tty: true
-    # command: -c "tail -f /dev/null"
     networks: 
       - regional_gateway-network
       - mqtt-network-B
-    # volumes:
-    #   - ./python_data/:./
 
 
      

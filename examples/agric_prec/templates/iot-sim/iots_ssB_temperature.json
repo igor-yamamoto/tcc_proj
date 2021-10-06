@@ -1,6 +1,6 @@
 {
     "id": "614921ed0e8e3d0001d82728",
-    "modified": 1632449482,
+    "modified": 1633486103,
     "name": "TCC_SESSION_TEMP_B",
     "dataDefinition": {
         "id": "614939c80e8e3d0001d82728",
@@ -61,7 +61,7 @@
     "devices": [
         {
             "id": "614831510e8e4d0001d82732",
-            "modified": 1632449474,
+            "modified": 1633486095,
             "name": "temp-sensor-4B",
             "targetSystems": [
                 {
@@ -70,7 +70,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -90,7 +90,7 @@
         },
         {
             "id": "614931410e8e4d0001d82732",
-            "modified": 1632449443,
+            "modified": 1633486073,
             "name": "temp-sensor-3B",
             "targetSystems": [
                 {
@@ -99,7 +99,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -119,7 +119,7 @@
         },
         {
             "id": "614931510e8e4d0991d82732",
-            "modified": 1632449420,
+            "modified": 1633486056,
             "name": "temp-sensor-2B",
             "targetSystems": [
                 {
@@ -128,7 +128,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -148,7 +148,7 @@
         },
         {
             "id": "699931510e8e3d0001d82728",
-            "modified": 1632449456,
+            "modified": 1633486035,
             "name": "temp-sensor-1B",
             "targetSystems": [
                 {
@@ -157,7 +157,7 @@
                     "name": "gateway-mqtt-1",
                     "type": "mqtt_broker",
                     "url": "mosquitto-b:1883",
-                    "topic": "devices/"
+                    "topic": "devices"
                 }
             ],
             "properties": [
@@ -247,11 +247,11 @@
     },
     "targetSystem": {
         "id": "61493527827423d4774a9ad7",
-        "modified": 1632448308,
+        "modified": 1633484726,
         "name": "gateway-mqtt-B",
         "type": "mqtt_broker",
         "url": "mosquitto-b:1883",
-        "topic": "devices/"
+        "topic": "devices"
     },
     "replayLooped": false
 }
