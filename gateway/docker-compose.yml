@@ -12,40 +12,26 @@ services:
       - "1883:1883"
       - "9001:9001"
     networks: 
-      # - regional_gateway-network
-      - mqtt-network
+      - network
     volumes:
       - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
 ## Python
   python:
     build: ./builds/python/
-    container_name: python-processor
+    container_name: python
     restart: always
     depends_on: 
       - mosquitto
     stdin_open: true
     tty: true
     networks: 
-      - regional_gateway-network
-      - mqtt-network
-    # volumes:
-    #   - ./python_data/:./
-
-
-     
-volumes:
-  mongodb-data:
-  minio-data:
-  minio-config:
-  rabbitmq-data:
-  ui-data:
-  nifi-data-gateway:
-
+      - regional_network
+      - network
   
 networks: 
-  mqtt-network:
+  network:
     driver: bridge
-  regional_gateway-network:
+  regional_network:
     external: true
   
