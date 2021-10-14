@@ -4,6 +4,7 @@ services:
   mosquitto:
     image: amd64/eclipse-mosquitto
     container_name: mosquitto
+    restart: always
     expose:
       - "1883"
       - "9001"
@@ -20,6 +21,7 @@ services:
   python:
     build: ./builds/python/
     container_name: python-processor
+    restart: always
     depends_on: 
       - mosquitto
     stdin_open: true
