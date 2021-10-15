@@ -15,6 +15,7 @@ services:
       - network
     volumes:
       - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./templates/mosquitto/mqtt_passwd:/mosquitto/config/mqtt_passwd
 
 ## Python
   python:

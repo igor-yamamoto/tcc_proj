@@ -71,9 +71,10 @@ class kafka:
 
         return test_val
 
-    def produce(self, message):
+    def produce(self, message, topic_context):
         if self.connect_status == 0:
-            self.producer.send(self.topic, value=bytes(message))
+            topic = f'{self.topic}-{topic_context}'
+            self.producer.send(topic, value=bytes(message))
         else:
             print('error: connection not stablished with broker.')
         
@@ -87,6 +88,9 @@ class mqtt:
         self.topic = config('MQTT_TOPIC')
         self.port = int(config('MQTT_PORT'))
         self.client_id = f'python-mqtt-{random.randint(0, 1000)}'
+
+        self.user = config('MQTT_USER')
+        self.passwd = config('MQTT_PASS')
 
         debug_mode = config('MQTT_DEBUG')
         if debug_mode == 'True':
@@ -129,6 +133,7 @@ class mqtt:
         client = mqtt_client.Client(self.client_id)
         client.on_connect = on_connect
         print(self.broker, self.port)
+        client.username_pw_set(self.user, self.passwd)
         client.connect(self.broker, self.port)
         return client
 
@@ -143,12 +148,13 @@ class mqtt:
                 message_transf = pipeline(message)
                 
             if message_transf:
-                message = message_transf
-                print(f"\t Sending message to kafka broker {broker.topic}")
+                message = message_transf[0]
+                topic_context = message_transf[1]
+                print(f"\t Sending message to kafka broker {broker.topic}-{topic_context}")
                 try:
-                    broker.produce(message.encode('utf-8'))
+                    broker.produce(message.encode('utf-8'), topic_context=topic_context)
                 except:
-                    broker.produce(message)
+                    broker.produce(message, context=topic_context)
 
         client.subscribe(self.topic)
         client.on_message = on_message
