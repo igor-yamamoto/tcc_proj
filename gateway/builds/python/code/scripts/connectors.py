@@ -149,6 +149,7 @@ class mqtt:
             if message_transf:
                 message = message_transf[0]
                 topic_context = message_transf[1]
+                print(message, topic_context)
                 if len(topic_context) > 1:
                     topic = f'{broker.topic}-{topic_context}'
                 else:

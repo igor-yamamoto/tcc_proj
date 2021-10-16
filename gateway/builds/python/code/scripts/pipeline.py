@@ -29,9 +29,10 @@ def main(message):
 
     if status == 0:
         message, status = allowed_devices(message)
+        context = ''
 
         if status == 0:
             message = json.dumps(message)
 
     # message = json.dumps(message)
-            return message
+            return message, context
