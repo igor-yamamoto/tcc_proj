@@ -1,3 +1,2 @@
 docker-compose exec broker \
-    kafka-console-consumer --bootstrap-server broker:29092 --topic test-topic --from-beginning \
-    #--max-messages 100
+    kafka-console-consumer --bootstrap-server localhost:29091 --topic test-topic

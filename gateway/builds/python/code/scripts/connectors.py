@@ -71,9 +71,8 @@ class kafka:
 
         return test_val
 
-    def produce(self, message, topic_context):
+    def produce(self, message, topic):
         if self.connect_status == 0:
-            topic = f'{self.topic}-{topic_context}'
             self.producer.send(topic, value=bytes(message))
         else:
             print('error: connection not stablished with broker.')
@@ -150,11 +149,15 @@ class mqtt:
             if message_transf:
                 message = message_transf[0]
                 topic_context = message_transf[1]
-                print(f"\t Sending message to kafka broker {broker.topic}-{topic_context}")
+                if len(topic_context) > 1:
+                    topic = f'{broker.topic}-{topic_context}'
+                else:
+                    topic = broker.topic
+                print(f"\t Sending message to kafka topic {topic}")
                 try:
-                    broker.produce(message.encode('utf-8'), topic_context=topic_context)
+                    broker.produce(message.encode('utf-8'), topic=topic)
                 except:
-                    broker.produce(message, context=topic_context)
+                    broker.produce(message, context=topic)
 
         client.subscribe(self.topic)
         client.on_message = on_message
