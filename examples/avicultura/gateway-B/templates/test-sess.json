@@ -1,0 +1,140 @@
+{
+  "id" : "616aec3db86e730001d1f98e",
+  "modified" : 1634407590,
+  "name" : "test-sess",
+  "dataDefinition" : {
+    "id" : "616aec1bb86e730001d1f98d",
+    "modified" : 1634407581,
+    "name" : "form-test",
+    "schema" : {
+      "metadata" : {
+        "type" : "json"
+      },
+      "type" : "object",
+      "properties" : {
+        "device_guid" : {
+          "type" : "string",
+          "metadata" : {
+            "position" : "device_guid",
+            "name" : "device_guid",
+            "description" : "device_guid"
+          }
+        },
+        "value" : {
+          "type" : "number",
+          "metadata" : {
+            "type" : "integer",
+            "position" : "value",
+            "name" : "value",
+            "description" : "value"
+          }
+        },
+        "timestamp" : {
+          "type" : "number",
+          "metadata" : {
+            "format" : "seconds",
+            "position" : "timestamp",
+            "name" : "timestamp",
+            "description" : "timestamp",
+            "type" : "timestamp"
+          }
+        }
+      },
+      "schemaKey" : "http://json-schema.org/draft-04/schema#"
+    }
+  },
+  "timer" : {
+    "type" : "interval",
+    "metric" : "seconds",
+    "value" : 5
+  },
+  "ticksNumber" : 0,
+  "isReplayLooped" : false,
+  "devices" : [ {
+    "id" : "616aebdeb86e730001d1f98c",
+    "modified" : 1634397296,
+    "name" : "device_test",
+    "targetSystems" : [ {
+      "id" : "616aebb8aa9ddfb6ad4cac79",
+      "modified" : 0,
+      "name" : "mosquitto",
+      "type" : "mqtt_broker",
+      "url" : "mosquitto:1883",
+      "topic" : ""
+    } ],
+    "properties" : [ {
+      "name" : "device_guid",
+      "value" : "001"
+    } ]
+  } ],
+  "deviceInjector" : {
+    "rule" : "round_robin"
+  },
+  "generator" : {
+    "type" : "schema_based",
+    "schema" : {
+      "metadata" : {
+        "type" : "json"
+      },
+      "type" : "object",
+      "properties" : {
+        "device_guid" : {
+          "type" : "string",
+          "metadata" : {
+            "position" : "device_guid",
+            "name" : "device_guid",
+            "description" : "device_guid"
+          },
+          "rule" : {
+            "type" : "device_property",
+            "propertyName" : "device_guid"
+          }
+        },
+        "value" : {
+          "type" : "number",
+          "metadata" : {
+            "type" : "integer",
+            "position" : "value",
+            "name" : "value",
+            "description" : "value"
+          },
+          "rule" : {
+            "type" : "random_integer",
+            "min" : 0,
+            "max" : 100
+          }
+        },
+        "timestamp" : {
+          "type" : "number",
+          "metadata" : {
+            "format" : "seconds",
+            "position" : "timestamp",
+            "name" : "timestamp",
+            "description" : "timestamp",
+            "type" : "timestamp"
+          },
+          "rule" : {
+            "type" : "current_time",
+            "metric" : "milliseconds",
+            "shift" : 0
+          }
+        }
+      },
+      "schemaKey" : "http://json-schema.org/draft-04/schema#"
+    }
+  },
+  "targetSystem" : {
+    "id" : "616aeb6246d77b6dc99fc602",
+    "modified" : 1634397109,
+    "name" : "mosquitto-test",
+    "security" : {
+      "username" : "tcc_test",
+      "password" : "12345",
+      "type" : "credentials"
+    },
+    "type" : "mqtt_broker",
+    "url" : "mosquitto:1883",
+    "topic" : "devices"
+  },
+  "replayLooped" : false
+}

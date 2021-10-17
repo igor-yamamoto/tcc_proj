@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  mosquitto-a:
+    image: amd64/eclipse-mosquitto
+    container_name: mosquitto-a
+    restart: always
+    expose:
+      - "1883"
+      - "9001"
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    networks: 
+      - network
+    volumes:
+      - ./templates/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./templates/mosquitto/mqtt_passwd:/mosquitto/config/mqtt_passwd
+
+## Python
+  python-a:
+    build: ./builds/python/
+    container_name: python-a
+    restart: always
+    depends_on: 
+      - mosquitto-a
+    stdin_open: true
+    tty: true
+    networks: 
+      - regional_network
+      - network
+  
+networks: 
+  network:
+    driver: bridge
+  regional_network:
+    external: true
+  
