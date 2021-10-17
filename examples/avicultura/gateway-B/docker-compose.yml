@@ -1,16 +1,16 @@
 version: '3'
 services:
 
-  mosquitto:
+  mosquitto-b:
     image: amd64/eclipse-mosquitto
-    container_name: mosquitto
+    container_name: mosquitto-b
     restart: always
     expose:
       - "1883"
       - "9001"
     ports:
-      - "1883:1883"
-      - "9001:9001"
+      - "1884:1883"
+      - "9002:9001"
     networks: 
       - network
     volumes:
@@ -18,12 +18,12 @@ services:
       - ./templates/mosquitto/mqtt_passwd:/mosquitto/config/mqtt_passwd
 
 ## Python
-  python:
+  python-b:
     build: ./builds/python/
-    container_name: python
+    container_name: python-b
     restart: always
     depends_on: 
-      - mosquitto
+      - mosquitto-b
     stdin_open: true
     tty: true
     networks: 

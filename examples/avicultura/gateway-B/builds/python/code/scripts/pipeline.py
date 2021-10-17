@@ -16,8 +16,12 @@ def main(message):
     message, status = validate_json(message)
 
     if status == 0:
+        try:
+            context = message['context']
+        except: 
+            print(f"Coudn't extract context from from message '{message}'. Returning 'dump' string.")
+            context = 'dump'
         message = json.dumps(message)
-        context = ''
-
+        
 # message = json.dumps(message)
         return message, context
