@@ -363,6 +363,7 @@
                         <group>org.apache.nifi</group>
                         <version>1.13.2</version>
                     </bundle>
+                    <comments></comments>
                     <descriptors>
                         <entry>
                             <key>Schema Write Strategy</key>
@@ -641,6 +642,7 @@
                         <group>org.apache.nifi</group>
                         <version>1.13.2</version>
                     </bundle>
+                    <comments></comments>
                     <descriptors>
                         <entry>
                             <key>Schema Write Strategy</key>
@@ -877,6 +879,7 @@
                         <group>org.apache.nifi</group>
                         <version>1.13.2</version>
                     </bundle>
+                    <comments></comments>
                     <descriptors>
                         <entry>
                             <key>schema-access-strategy</key>
@@ -1130,6 +1133,7 @@
                         <group>org.apache.nifi</group>
                         <version>1.13.2</version>
                     </bundle>
+                    <comments></comments>
                     <descriptors>
                         <entry>
                             <key>schema-access-strategy</key>
@@ -1367,6 +1371,7 @@
 <x>1504.0</x>
 <y>496.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>in</name>
                             <state>STOPPED</state>
@@ -1931,6 +1936,7 @@
 <x>1408.0</x>
 <y>464.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>in</name>
                             <state>STOPPED</state>
@@ -2781,6 +2787,7 @@
 <x>480.0</x>
 <y>712.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>out</name>
                             <state>STOPPED</state>
@@ -3317,6 +3324,7 @@
 <x>480.0</x>
 <y>712.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>out</name>
                             <state>STOPPED</state>
@@ -3853,6 +3861,7 @@
 <x>480.0</x>
 <y>712.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>out</name>
                             <state>STOPPED</state>
@@ -4389,6 +4398,7 @@
 <x>480.0</x>
 <y>712.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>out</name>
                             <state>STOPPED</state>
@@ -4925,6 +4935,7 @@
 <x>480.0</x>
 <y>712.0</y>
                             </position>
+                            <comments></comments>
                             <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                             <name>out</name>
                             <state>STOPPED</state>
@@ -5382,5 +5393,5 @@
             </variables>
         </processGroups>
     </snippet>
-    <timestamp>10/17/2021 19:16:53 UTC</timestamp>
+    <timestamp>10/17/2021 22:24:34 UTC</timestamp>
 </template>
