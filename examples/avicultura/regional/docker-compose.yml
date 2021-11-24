@@ -84,12 +84,14 @@ services:
       - 9994:9991
       - 9993:9992
     volumes:
-      - nifi-data:/opt/nifi
+      - ./drivers/postgresql-42.2.5.jre7.jar:/opt/drivers/postgresql-42.2.5.jre7.jar
+      # - nifi-data:/opt/nifi
     networks: 
       - network
      
 volumes:
   nifi-data:
+  # drivers:
 
 networks: 
   network:

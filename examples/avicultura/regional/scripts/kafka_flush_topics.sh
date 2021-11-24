@@ -12,11 +12,11 @@
 
 #!/bin/bash
 
-TOPICS=$(docker-compose exec broker-A kafka-topics --zookeeper zookeeper:2181 --list )
+TOPICS=$(docker-compose exec broker-a kafka-topics --zookeeper zookeeper:2181 --list )
 
 for T in $TOPICS
 do
   if [ "$T" != "__consumer_offsets" ]; then
-    docker-compose exec broker-A kafka-topics --zookeeper zookeeper:2181 --delete --topic $T
+    docker-compose exec broker-a kafka-topics --zookeeper zookeeper:2181 --delete --topic $T
   fi
 done

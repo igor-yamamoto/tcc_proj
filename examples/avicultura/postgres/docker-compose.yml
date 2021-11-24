@@ -1,0 +1,25 @@
+version: '3'
+services:
+    postgres:
+        image: postgres:12.8
+        environment:
+          - POSTGRES_USER=admin
+          - POSTGRES_PASSWORD=admin
+        logging:
+          options:
+            max-size: 10m
+            max-file: "3"
+        ports:
+          - '5432:5432'
+        volumes: 
+          - ./postgres-data:/var/lib/postgresql/
+          
+        networks: 
+          - regional_network
+
+          # copy the sql script to create tables
+          # - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+networks:
+  regional_network:
+    external: true
