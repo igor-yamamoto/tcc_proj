@@ -1,12 +1,9 @@
-# Projeto TCC - Arquitetura IoT Edge
-Projeto para tese de conclusão de curso. 
+# Projeto TCC - Arquitetura de dados híbrida orientado a IoT
 
-Arquivos da camada de gateway estão no caminho `gateway/`, e regional em `regional/` (:shipit:). Conferir README.
+> Projeto desenvolvido como complementação à tese de conclusão de curso "Arquitetura de dados híbrida no contexto de IoT e Big Data: um estudo para provisionamento de avicultura de precisão", orientado pelo Prof. Dr. Carlos Yujiro Shigue apresentado à Escola de Engenharia de Lorena (EEL-USP). 
 
-## WIP/ToDo
-- Arrumando dockerfiles de gateway:
-    - Ver se é possível criar Dockerfile para os serviços de Mosquitto e Nifi/MiNiFi, para que um gateway possa ser iniciado via build diretamente do compose (e.g.: como os brokers kafka são definidos em um compose)
-- Arrumar .env de gateway, e ver se existe necessidade de .env para regional
-- Melhorar documentação
-- Levantamento bibliográfico:
-    - Dados geraods em IoT de agric. de precisão
+Este repositório contém os códigos e demais arquivos relacionado ao projeto desenvolvido como entrega complementar da tese de conclusão de curso. 
+
+Os diretórios `gateway/` e `regional/` contém os arquivos `docker-compose.yml`, builds e templates para subir cada uma das camadas desenhadas na integração. O diretório `examples/` tem como objetivo agregar aplicações e provas de conceitos usando os módulos desenhados neste projeto. 
+
+<!-- Arquivos da camada de gateway estão no caminho `gateway/`, e regional em `regional/` (:shipit:). Conferir README. -->
