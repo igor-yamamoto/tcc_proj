@@ -6,4 +6,6 @@ Este repositório contém os códigos e demais arquivos relacionado ao projeto d
 
 Os diretórios `gateway/` e `regional/` contém os arquivos `docker-compose.yml`, builds e templates para subir cada uma das camadas desenhadas na integração. O diretório `examples/` tem como objetivo agregar aplicações e provas de conceitos usando os módulos desenhados neste projeto. 
 
+Qualquer contribuição, seja em melhorias dos módulso básicos ou em aplicações  e casos de uso são, bem vindas!
+
 <!-- Arquivos da camada de gateway estão no caminho `gateway/`, e regional em `regional/` (:shipit:). Conferir README. -->
